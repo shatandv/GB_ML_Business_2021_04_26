@@ -1,0 +1,25 @@
+Домашнее задание 4
+1. Скачать набор данных маркетинговых кампаний отсюда https://www.kaggle.com/davinwijaya/customer-retention.
+2. Поле conversion - это целевая переменная, а offer - коммуникация. Переименовать поля (conversion -> target, offer -> treatment) и привести поле treatment к бинарному виду (1 или 0, т.е было какое-то предложение или нет) - значение No Offer означает отсутствие коммуникации, а все остальные - наличие.
+3. Сделать разбиение набора данных не тренировочную и тестовую выборки.
+4. Сделать feature engineering на ваше усмотрение (допускается свобода выбора методов).
+5. Провести uplift-моделирование 3 способами: одна модель с признаком коммуникации (S learner), модель с трансформацией таргета (трансформация классов п. 2. 1) и вариант с двумя независимыми моделями.
+6. В конце вывести единую таблицу сравнения метрик uplift@10%, uplift@20% этих 3 моделей.
+7. Построить модель UpliftTreeClassifier и попытаться описать словами полученное дерево.
+8. (опционально) Для модели S learner (модель с дополнительным признаком коммуникации) построить зависимость таргета (конверсии - поле conversion) от значения uplift: 1) сделать прогноз и получить uplift для тестовой выборки 2) отсортировать тестовую выборку по uplift по убыванию 3) разбить на децили (pandas qcut вам в помощь) 4) для каждого дециля посчитать среднюю conversion.
+9. (опционально) Построить модель UpliftRandomForestClassifier и попытаться описать словами полученное дерево.
+
+Ссылки:
+* https://towardsdatascience.com/a-quick-uplift-modeling-introduction-6e14de32bfe0
+* https://habr.com/ru/company/ru_mts/blog/485980/#reference1
+* https://en.wikipedia.org/wiki/Uplift_modelling
+* https://www.youtube.com/watch?v=yFQAIJBYXI0
+* https://www.youtube.com/watch?v=jCUcYiBK03I
+* https://www.uplift-modeling.com/en/latest/
+* https://arxiv.org/pdf/1809.04559.pdf
+* https://catboost.ai/docs/concepts/about.html
+
+Библиотеки и пакеты:
+* causalml
+* sklift
+* catboost
